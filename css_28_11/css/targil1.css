@@ -1,0 +1,9 @@
+ul > li:hover {
+  color: red;
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+a:hover {
+  color: salmon;
+}
