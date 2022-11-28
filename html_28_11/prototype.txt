@@ -1,0 +1,10 @@
+job offer name
+job offer email
+job offer phone
+job offer location: north,center,south,tel-aviv,eilat,off-shore
+job salary : <5000, 5,000-10,000 , 10,000-15,000, 15,000-20,000, 20,000+
+job title : programmer, qa, automation, manager, devops, other
+description:
+
+button -> send
+button -> reset
