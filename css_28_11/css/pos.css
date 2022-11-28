@@ -1,0 +1,18 @@
+kbd {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+}
+
+.static {
+  position: static;
+  border: 3px solid #73ad21;
+  width: 50vh;
+}
+
+.relative {
+  position: relative;
+  width: 50vh;
+  left: 30px;
+  top: 30px;
+  border: 3px solid #009fff;
+}
