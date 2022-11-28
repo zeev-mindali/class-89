@@ -4,56 +4,34 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Forms</title>
+    <title>Table</title>
   </head>
   <body>
-    <div>
-      <h1>Job offer</h1>
-      <hr />
-      <form>
-        <h3>Job offer</h3>
-        <input type="text" placeholder="Person Name" /><br /><br />
-        <input type="email" placeholder="Email" /><br /><br />
-        <input type="tel" placeholder="Phone number" /><br /><br />
-        <hr />
-        <input type="checkbox" />north<br />
-        <input type="checkbox" />center<br />
-        <input type="checkbox" />south<br />
-        <input type="checkbox" checked disabled />tel-aviv<br />
-        <input type="checkbox" />Eilat<br />
-        <input type="checkbox" disabled />off-shore<br />
-        <hr />
-        <input type="radio" name="salary" checked /> -5,000>
-        <input type="radio" name="salary" /> 5,000-10,000
-        <input type="radio" name="salary" /> 10,000-15,000
-        <input type="radio" name="salary" /> 15,000-20,000
-        <input type="radio" name="salary" /> 20,000+
-        <hr />
-        <button>Kill Bill</button>
-        <hr />
-        have a car:
-        <input type="radio" name="hasCar" />Yes
-        <input type="radio" name="hasCar" />No
-        <hr />
-        <select>
-          <option disabled selected>Choose job title</option>
-          <option>programmer</option>
-          <option>qa</option>
-          <option>automation</option>
-          <option>manager</option>
-          <option>devops</option>
-          <option>other</option>
-        </select>
-        <hr />
-        <textarea
-          rows="10"
-          cols="80"
-          placeholder="tell me the story of your life...."
-        ></textarea>
-        <hr />
-        <input type="submit" value="submit" />
-        <input type="reset" value="reset" />
-      </form>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <td id="userName" class="userName box marignTable"><b>name</b></td>
+          <td><b>tel</b></td>
+          <td><b>address</b></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Zeev</td>
+          <td>052-4043142</td>
+          <td>הצפון הקר והמנוכר</td>
+        </tr>
+        <tr>
+          <td>Amital</td>
+          <td>055-555-5555</td>
+          <td>קריית ים</td>
+        </tr>
+        <tr>
+          <td >Snapir</td>
+          <td>055-123-4567</td>
+          <td>כרמיאל</td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>

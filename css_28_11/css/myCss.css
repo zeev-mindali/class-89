@@ -1,0 +1,36 @@
+body{
+    /*background-color: wheat;*/
+    background-color: wheat;    
+}
+
+/* . -> class */
+.div1{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* # -> id */
+#div2{
+    background-color: chartreuse;
+}
+
+.zeev{
+    color:red;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.hila{
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#hila{
+    color:blueviolet;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.hebrew{
+    text-align: right;
+}
