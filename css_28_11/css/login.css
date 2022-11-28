@@ -1,0 +1,32 @@
+body{
+    direction: rtl;
+    text-align: center;
+    background-color: wheat;
+}
+
+input, button{
+    margin-top: 30px;
+    padding: 5px;
+}
+
+button{
+    margin-bottom: 20px;
+    background-color: aquamarine;
+}
+
+.loginForm{
+    border : 2px solid;
+    width:300px;
+    border-radius: 25px;
+    box-shadow: 10px 10px 30px ;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+input:focus{
+    box-shadow: inset 0 0 2px 2px #009fff;
+    background-color: white;
+    color:red;
+}
+
