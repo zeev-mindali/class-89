@@ -1,0 +1,29 @@
+.center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: center;
+}
+
+thead tr:first-child {
+  background-color: grey;
+}
+
+tr:nth-child(even) {
+  background-color: lightblue;
+}
+
+tr:nth-child(odd) {
+  background-color: lightgreen;
+}
+
+tr:last-child {
+  background-color: red;
+}
