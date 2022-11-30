@@ -1,0 +1,11 @@
+.myDiv {
+  height: 100px;
+  width: 100px;
+  background-color: black;
+  border-radius: 25%;
+  margin-left: 35px;
+}
+body {
+  display: flex;
+  justify-content: center;
+}

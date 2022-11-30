@@ -1,0 +1,53 @@
+body {
+  background-image: linear-gradient(90deg, black, white);
+  height: 100%;
+}
+
+.loginBox {
+  position: relative;
+  top: 200px;
+  width: 300px;
+  height: 250px;
+  border: solid white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 10px 10px 10px white;
+  margin: auto;
+  text-align: center;
+}
+
+input {
+  width: 250px;
+  height: 30px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+input:focus {
+  background-color: lightcyan;
+}
+
+.myButton {
+  box-shadow: 0px 10px 14px -7px #276873;
+  background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+  background-color: #599bb3;
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 13px 32px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #3d768a;
+  height: 50px;
+}
+.myButton:hover {
+  background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+  background-color: #408c99;
+}
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
