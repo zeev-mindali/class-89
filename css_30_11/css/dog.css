@@ -1,0 +1,30 @@
+img {
+  width: 10%;
+  position: relative;
+  animation-name: dog;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes dog {
+  0% {
+    left: 0vh;
+    top: 0vh;
+  }
+  25% {
+    left: 80vh;
+    top: 0vh;
+  }
+  50% {
+    left: 80vh;
+    top: 50vh;
+  }
+  75% {
+    left: 0vh;
+    top: 50vh;
+  }
+  100% {
+    left: 0vh;
+    top: 0vh;
+  }
+}
