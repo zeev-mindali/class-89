@@ -28,22 +28,32 @@
         img {
             margin-top: 10px;
         }
+
+        input,
+        select {
+            margin-top: 20px;
+            width: 80%;
+        }
     </style>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
     <!-- menu / navbar -->
     <nav class="navbar navbar-expand-sm bg-dark fixed-top d-flex justify-content-around">
-        <ul class="navbar-nav ">
+        <ul class="navbar-nav">
             <li><a href="#north">Student from north</a></li>
             <li><a href="#center">Hatchunim</a></li>
             <li><a href="#south">Student from south</a></li>
         </ul>
+        <!-- add student button-->
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addStudent">Add
+            Student</button>
     </nav>
-    <!-- add student button-->
+
 
     <!-- student list -->
     <div id="north" class="container-fluid " style="margin-top:50px;">
+
         <div class="row d-flex justify-content-around">
             <!-- card design -->
             <div class="card" style="width:200px">
@@ -260,6 +270,36 @@
                         052-123-4567
                     </p>
                     <a href="#" class="btn btn-primary">contact person</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- our modal :) -->
+    <div id="addStudent" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- header -->
+                <div class="modal-header">
+                    <h3 class="modal-title">Add New Student</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- body -->
+                <div class="modal-body">
+                    <input type="text" placeholder="Student Name" />
+                    <input type="number" placeholder="Student Age" />
+                    <input type="text" placeholder="Student City" />
+                    <input type="tel" placeholder="Student Cell Phone" />
+                    <select>
+                        <option disabled selected>Choose Location</option>
+                        <option>North</option>
+                        <option>Center</option>
+                        <option>South</option>
+                    </select>
+                    <input type="file" />
+                </div>
+                <!-- footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Add User</button>
                 </div>
             </div>
         </div>
