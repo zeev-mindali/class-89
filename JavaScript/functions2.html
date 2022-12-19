@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //function that don't get anything and don't return anything
+        function sayHi(){
+            console.log("Hello Arik (the other one)");
+        }
+        sayHi();
+
+        //function that getting info, and not returning anything
+
+        function sayHiTo(victimName){
+            console.log("Noam say hi to",victimName);
+        }
+
+        sayHiTo("Lior");
+        sayHiTo("Maya");
+        sayHiTo("Matan");
+        sayHiTo("Arik (the other one)");
+
+
+        //function not getting and return a value
+        function getNumber(){
+            //gives a random number between 0-100.           
+            return parseInt(Math.random()*100);
+        }
+
+        var randomNumber = getNumber();
+        console.log(randomNumber);
+
+
+        //function getting args, returning a value
+        function power(base,exp){
+            var res=base;
+            for (var counter=1;counter<exp;counter++){
+                res*=base;
+            }
+            return res;
+        }
+
+        var result = power(2,5);
+        console.log(result);
+
+        //constant
+        const PI=3.1415
+        console.log(PI)
+        //PI=2.7843;
+
+        //function version 2 => Arrow function
+        const powerV2 = (base,exp)=>{
+            var res=base;
+            for (var counter=1;counter<exp;counter++){
+                res*=base;
+            }
+            return res;
+        }
+
+        console.log(powerV2(3,7));
+    </script>
+</body>
+</html>
