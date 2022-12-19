@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Targil 2</title>
+</head>
+<body>
+    <script>
+        const grades = [68,78,90,50,100,66,100,80,75,55];
+        const failedGrade=70;
+        const excellentGrade=95;
+        var highGrade=0;
+        var lowGrade=100;
+        var avg=0;
+        var failed=0;
+        var excellent=0;
+        for (var index=0;index<grades.length;index++){
+            if (grades[index]>highGrade){
+                highGrade=grades[index];
+            }
+            if (grades[index]<lowGrade){
+                lowGrade=grades[index];
+            }
+            avg+=grades[index]; //avg=avg+grades[index]
+            if (grades[index]<failedGrade){
+                failed++;
+            }
+            if (grades[index]>excellentGrade){
+                excellent++;
+            }
+        }
+
+        console.log("high score:",highGrade);
+        console.log("low score:",lowGrade);
+        console.log("average:",Math.floor(avg/grades.length));
+        console.log("failed:",failed);
+        console.log("Excellent (matan):",excellent);
+    </script>
+</body>
+</html>
