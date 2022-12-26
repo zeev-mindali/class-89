@@ -1,0 +1,46 @@
+<!-- //קלוט מספר והצג כמה פעמים מופיעה כל ספרה -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeWork</title>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Home Work...</h1>
+    <hr />
+    <script>
+      var myNumber = prompt("Enter your number");
+      //console.log("type of variable: ", typeof myNumber);
+      //מערך מונים
+      var digits = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+      //Method I
+      //var myNum = parseInt(myNumber);
+      //   var myNum = +myNumber;
+      //   console.log("type of variable: ", typeof myNum);
+      //   while (myNum > 0) {
+      //     var lastDigit = myNum % 10;
+      //     digits[lastDigit]++;
+      //     myNum = parseInt(myNum / 10);
+      //   }
+
+      //Method II
+      // 321654957
+      for (var index = 0; index < myNumber.length; index++) {
+        var myDigit = +myNumber[index];
+        digits[myDigit]++;
+      }
+
+      //display result
+      for (var counter = 0; counter < digits.length; counter++) {
+        console.log(counter, ":", digits[counter]);
+      }
+    </script>
+  </body>
+</html>
