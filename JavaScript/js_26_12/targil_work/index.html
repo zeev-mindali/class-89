@@ -12,17 +12,22 @@
     <h2>Work to do....</h2>
     <hr />
     <div class="Box">
-      <input type="text" id="work" placeholder="What to do..." />
-      <input type="button" value="add work" onclick="addWork()" />
+      <input type="text" id="work" placeholder="What to do..." /><br /><br />
+      <select id="taskTime">
+        <option disabled selected>Choose a task</option>
+        <option value="urgent">Urgent</option>
+        <option value="need">need to do</option>
+        <option value="free">in your free time</option></select
+      ><br /><br />
+      <input
+        type="button"
+        value="add work"
+        onclick="addTodo(work.value,taskTime.value)"
+      />
     </div>
     <br />
     <div class="Box" id="res" style="width: 30%; text-align: left">
-      <ol>
-        <li>Wash the house</li>
-        <li>take out the garbage</li>
-        <li>Wash the house</li>
-        <li>Prepare fish</li>
-      </ol>
+      <ol id="todoList"></ol>
     </div>
   </body>
 </html>
