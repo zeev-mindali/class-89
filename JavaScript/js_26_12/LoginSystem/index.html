@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="js/myjs.js"></script>
+    <style>
+      body {
+        text-align: center;
+      }
+      .LoginForm {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        border: 1px solid black;
+        box-shadow: 5px 5px 5px;
+        width: 200px;
+      }
+      input {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Login system</h1>
+    <hr />
+    <div class="LoginForm">
+      <input type="text" id="uName" placeholder="Enter user name.." />
+      <input type="password" id="uPass" placeholder="Enter user password..." />
+      <input type="button" value="login" onclick="makeLogin()" />
+    </div>
+
+    <h2><div id="res">Welcome to משטרע</div></h2>
+
+    <br /><br />
+    <hr />
+    <br />
+    <div class="LoginForm">
+      <input type="number" placeholder="enter price..." id="price" />
+      <div id="res2"></div>
+      <input type="button" value="calc" onclick="calc()" />
+    </div>
+  </body>
+</html>
