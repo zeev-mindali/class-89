@@ -17,16 +17,19 @@ const createList = () => {
   for (var index = 0; index < todoList.length; index++) {
     //res += `<li>${todoList[index]}</li>`;
     //res += "<li>"+todoList[index]+"</li>";
+    
     switch (todoListTime[index]) {
       case "urgent":
         res += "<li style='color:red'>";
         break;
       case "need":
-        res += "<li style='color:yellow'>";
+        res += "<li style='color:orange'>";
         break;
       case "free":
         res += "<li style='color:green'>";
         break;
+      case "noNeed":
+        res += "<li>";
     }
     res += `${todoList[index]}</li>`;
   }
