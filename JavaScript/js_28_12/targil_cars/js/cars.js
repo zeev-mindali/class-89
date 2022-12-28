@@ -1,12 +1,12 @@
 var cars = [];
 
-var singleCar = {
-  carNumber: 0,
-  carType: "",
-  carFuel: "",
-  carYear: 0,
-  carLic: false,
-};
+// var singleCar = {
+//   carNumber: 0,
+//   carType: "",
+//   carFuel: "",
+//   carYear: 0,
+//   carLic: false,
+// };
 
 const sayHi = () => {
   alert("hi Hila :o)");
@@ -29,15 +29,39 @@ const handleData = () => {
 
   //console.log(carNumber, carType, fuel, carYear, carLic);
 
-  singleCar.carNumber = carNumber;
-  singleCar.carType = carType;
-  singleCar.carFuel = fuel;
-  singleCar.carYear = carYear;
-  singleCar.carLic = carLic;
+  const newCar = new Object();
 
-  console.log(singleCar);
+  newCar.carNumber = carNumber;
+  newCar.carType = carType;
+  newCar.carFuel = fuel;
+  newCar.carYear = carYear;
+  newCar.carLic = carLic;
 
-  cars.push(singleCar);
+  //newCar.nudnik = "Arik && Ido";
+  //console.log(newCar);
+
+  cars.push(newCar);
+  makeTableData();
+};
+
+const makeTableData = () => {
+  var tableData = document.getElementById("carList");
+  var data = ""; //string
+
+  cars.map((item) => {
+    data += `
+            <tr>
+                <td>${item.carNumber}</td>
+                <td>${item.carType}</td>
+                <td>${item.carFuel}</td>
+                <td>${item.carYear}</td>
+                <td>${item.carLic ? "✔" : "❌"}</td>
+            </tr>
+        `;
+
+    //data += "<tr><td>"+item.carNumber+"</td><td>"+item.carType
+  });
+  tableData.innerHTML = data;
 };
 
 const handleData_old = () => {
