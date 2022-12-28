@@ -56,6 +56,8 @@ const makeTableData = () => {
                 <td>${item.carFuel}</td>
                 <td>${item.carYear}</td>
                 <td>${item.carLic ? "✔" : "❌"}</td>
+                <td>🖊</td>
+                <td>🗑</td>
             </tr>
         `;
 
