@@ -11,3 +11,21 @@ body{
     margin-right:auto;
     padding: 20px;
 }
+table{
+    margin:50px auto;
+}
+table, th, td{
+    border:1px solid white;
+    border-collapse: collapse;
+    padding: 10px;
+}
+tr:nth-child(even){
+    background-color: lightblue;
+}
+tr:nth-child(odd){
+    background-color: lightgreen;
+}
+thead tr:first-child{
+    background-color: lightgray;
+    color:brown;
+}

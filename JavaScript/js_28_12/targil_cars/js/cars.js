@@ -1,3 +1,13 @@
+var cars = [];
+
+var singleCar = {
+  carNumber: 0,
+  carType: "",
+  carFuel: "",
+  carYear: 0,
+  carLic: false,
+};
+
 const sayHi = () => {
   alert("hi Hila :o)");
 };
@@ -17,7 +27,17 @@ const handleData = () => {
     }
   });
 
-  console.log(carNumber, carType, fuel, carYear, carLic);
+  //console.log(carNumber, carType, fuel, carYear, carLic);
+
+  singleCar.carNumber = carNumber;
+  singleCar.carType = carType;
+  singleCar.carFuel = fuel;
+  singleCar.carYear = carYear;
+  singleCar.carLic = carLic;
+
+  console.log(singleCar);
+
+  cars.push(singleCar);
 };
 
 const handleData_old = () => {
