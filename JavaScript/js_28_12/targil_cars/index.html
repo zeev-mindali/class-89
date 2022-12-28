@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/cars.css" rel="stylesheet" />
+    <script defer src="js/cars.js"></script>
+    <title>Cars</title>
+  </head>
+  <body>
+    <h1>car info</h1>
+    <hr />
+    <div class="carInfo">
+        <form action="javascript:handleData()">
+            <input type="text" placeholder="car number..." id="carNumber" maxlength="11"/>
+            <select id="carType">
+                <option disabled selected>choose type</option>
+                <option>Private</option>
+                <option>Truck</option>
+                <option>Bike</option>                
+            </select>
+            <br/><br/>
+            <input type="radio" name="carFuel" id="Gasoline">Gasoline</input>
+            <input type="radio" name="carFuel" id="Diesel">Diesel</input>
+            <input type="radio" name="carFuel" id="Gas">Gas</input>
+            <input type="radio" name="carFuel" id="Electric">Electric</input>            
+            <input type="radio" name="carFuel" id="Hybrid">Hybrid</input>  
+            <br/><br/>
+            <input type="number" id="year" placeholder="car manufacturing year"/>       
+            <input type="checkbox" id="license"/>have a valid license
+            <br/><br/>
+            <input type="submit"/>
+            <input type="reset"/>
+        </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+body{
+    text-align: center;
+    background-image: linear-gradient(90deg, purple, black);   
+    color: whitesmoke;
+}
+.carInfo{
+    border: 1px solid whitesmoke;
+    box-shadow: 5px 5px 5px;
+    width: 30%;
+    margin-left: auto;
+    margin-right:auto;
+    padding: 20px;
+}
