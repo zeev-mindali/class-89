@@ -12,6 +12,8 @@ const myAction = () => {
   trans.transDate = document.getElementById("actionDate").value;
   myData.push(trans);
   makeTable();
+  //reset form
+  document.getElementById("myForm").reset();
 };
 
 const makeTable = () => {
@@ -34,9 +36,3 @@ const makeTable = () => {
   console.log(data);
   document.getElementById("userData").innerHTML = data;
 };
-
-//   if (trans.action == "deposit") {
-//     income += trans.action;
-//   } else {
-//     outcome += trans.action;
-//   }
