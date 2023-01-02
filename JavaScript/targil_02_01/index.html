@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Bank</title>
+    <link rel="stylesheet" href="css/bank.css" />
+    <script src="js/bank.js"></script>
+  </head>
+  <body>
+    <h1>My bank account</h1>
+    <hr />
+    <div class="Box">
+      <form action="javascript:myAction()">
+        <input
+          type="text"
+          placeholder="Please enter description"
+          id="desc"
+        /><br /><br />
+        <select id="action">
+          <option value="deposit">Deposit</option>
+          <option value="withdraw">withdraw</option>
+        </select>
+        <br /><br />
+        <input type="number" placeholder="Amount of money" id="cash" />
+        <br /><br />
+        <input type="date" id="actionDate" />
+        <br /><br />
+        <textarea
+          id="memo"
+          rows="5"
+          cols="40"
+          placeholder="עכשיו דממה, הילה על הבמה"
+        ></textarea>
+        <br /><br />
+        <input type="submit" />
+        <input type="reset" />
+      </form>
+    </div>
+    <br /><br />
+    <div id="myResult"></div>
+    <table>
+      <thead>
+        <tr>
+          <th>date</th>
+          <th>description</th>
+          <th>sum</th>
+          <th>memo</th>
+        </tr>
+      </thead>
+      <tbody id="userData"></tbody>
+    </table>
+  </body>
+</html>

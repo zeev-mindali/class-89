@@ -1,0 +1,35 @@
+body{
+    text-align: center;
+    background-image: linear-gradient(45deg, cyan,white);
+}
+
+.Box{
+    border : 1px solid black;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width : 400px;
+    background-color: white;
+    padding :10px;
+}
+table{
+    margin : auto;
+    margin-top: 20px;
+}
+table,th,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th{
+    background-color: lightgray;
+}
+tr:nth-child(odd){
+    background-color: lightcyan;
+}
+tr:nth-child(even){
+    background-color: lightyellow;
+}
+td{
+    padding: 10px;
+}
