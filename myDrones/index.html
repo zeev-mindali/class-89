@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Drones</title>
+    <link rel="stylesheet" href="css/drones.css" />
+    <script defer src="js/drones.js"></script>
+  </head>
+  <body>
+    <h1>My drones Lab</h1>
+    <div class="newDrone">
+      <form action="javascript:addNewDrone()">
+        <h3>Add new drone</h3>
+        <hr />
+        <input type="text" id="ownerName" placeholder="Enter Owner" /><br />
+        <input type="date" id="recivedDate" /><br />
+        <input type="checkbox" id="isVIP" />VIP<br />
+        <select id="manufacture">
+          <option value="dji">DJI</option>
+          <option value="Yanecc">Yanecc</option>
+          <option value="PX4">PX4</option>
+        </select>
+        <br />
+        <input type="submit" value="add" />
+        <input type="reset" value="reset" />
+      </form>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Owner</th>
+          <th>date</th>
+          <th>isVIP</th>
+          <th>Manufacture</th>
+          <th>eta</th>
+        </tr>
+      </thead>
+      <tbody id="droneList"></tbody>
+    </table>
+  </body>
+</html>
