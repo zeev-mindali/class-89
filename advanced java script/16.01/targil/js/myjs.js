@@ -39,7 +39,7 @@ Number.prototype.makeComma = function () {
         //get last 3 digits and add comma (,) if result is not empty
         result = temp % 1000 + (result.length>1?",":"")+ result;
         //take out the 3 numbers that we used
-        temp = Number.parseInt(temp/1000);
+        temp = Number.parseInt(temp/1000); //45678/1000=45.678=>45
     }
     //return result.substring(0,result.length-1);
 
