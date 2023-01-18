@@ -38,13 +38,15 @@ const insertData = () => {
   const tableData = document.getElementById("droneList");
   var myHTML = "";
   droneList.map((item) => {
+    item.image =
+      "https://www.strauss-group.co.il/wp-content/blogs.dir/1/files/7290006664532-1.jpg";
     myHTML += `
         <tr>
             <td>${item.owner}</td>
             <td>${pretifyDate(item.date)}</td>
             <td>${item.vip ? "😁" : "😥"}</td>
             <td>${item.manufacture}</td>
-            <td>${eta(item)}</td>
+            <td><img src="${item.image}" width=30/></td>
         </tr>
     `;
   });
