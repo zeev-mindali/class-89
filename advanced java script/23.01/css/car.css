@@ -1,0 +1,12 @@
+body {
+  text-align: center;
+}
+
+.inputData {
+  border: 1px solid black;
+  box-shadow: 2px 2px 5px 2px grey;
+  width: 300px;
+  height: 20px;
+  margin: auto;
+  padding: 20px;
+}
