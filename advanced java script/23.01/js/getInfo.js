@@ -6,11 +6,14 @@
 //getOffroad
 
 const locateCar = async () => {
+  //get car id from input text box
   const carID = document.getElementById("carNumber").value;
+  //check if we have a car...
   await getCarTruck(carID)
     .then((data) => {
       if (data != null) {
         //we have a car, check for handicap
+        let isHandiCap = await getHandiCap(carID);
       } else {
         //check truck or bike
       }
@@ -25,4 +28,5 @@ const locateCar = async () => {
         //check if it offroad
       })
     );
+    console.log("me here")
 };
