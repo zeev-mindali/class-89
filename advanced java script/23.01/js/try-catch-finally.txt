@@ -1,0 +1,12 @@
+try{
+
+} catch {
+
+} finally {
+
+}
+
+
+call promise
+.then -> resolve
+.catch -> reject

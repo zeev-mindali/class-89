@@ -10,3 +10,13 @@ const urlRecall =
   "https://data.gov.il/api/3/action/datastore_search?resource_id=36bf1404-0be4-49d2-82dc-2f1ead4a8b93&q=";
 const urlOffroad =
   "https://data.gov.il/api/3/action/datastore_search?resource_id=f6efe89a-fb3d-43a4-bb61-9bf12a9b9099&q=";
+
+let CarInfo = {
+  mispar_rechev: 0,
+  tozeret_nm: "",
+  kinuy_mishari: "",
+  tzeva_rechev: "",
+  shnat_yitzur: "",
+  tokef_dt: "",
+  handicap: false,
+};
