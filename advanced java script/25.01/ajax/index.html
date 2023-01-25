@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <script>
+      let url =
+        "https://data.gov.il/api/3/action/datastore_search?resource_id=053cea08-09bc-40ec-8f7a-156f0677aff3&q=1113334";
+      let coffee = "https://coffee.alexflipnote.dev/random.json";
+      const getRandomCoffee = async () => {
+        let response = await fetch(url)
+          .then((response) => response.json())
+          .then((data) => console.log(data));
+      };
+      //getRandomCoffee();
+      //$.get(url, (data) => console.log(data));
+      $.get(coffee, (data) => console.log(data));
+    </script>
+  </body>
+</html>
