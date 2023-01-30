@@ -13,8 +13,8 @@
       let tempNum = myNum;
       while (tempNum > 0) {
         numbers[tempNum % 10]++;
-        tempNum = parseInt(tempNum / 10);
-      }
+        tempNum = parseInt(tempNum / 10); 
+      } 
       for (let index = 0; index < numbers.length; index++) {
         if (numbers[index] == 0) console.log(index);
       }
