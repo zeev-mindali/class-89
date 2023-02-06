@@ -18,4 +18,4 @@ bumper.drinkMilk(mumu);
 //let zeev = new Animal("zeev", 48, "white", "haouuuuuuuu");
 //console.log(zeev);
 
-console.log ("Matan , chaver ata chaser");
+console.log ("another one bite the dust");
