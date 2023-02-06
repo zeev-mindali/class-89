@@ -13,6 +13,10 @@ class Cat extends Animal {
     super(name, age, color, sound);
     this.mustageLength = mustageLength;
   }
+
+  public getLength() {
+    return this.mustageLength;
+  }
 }
 
 export default Cat;

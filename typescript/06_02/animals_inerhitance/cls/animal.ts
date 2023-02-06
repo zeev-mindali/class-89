@@ -35,14 +35,20 @@ class Animal {
   }
 
   public drinkMilk(cow: Cow) {
-    if (this instanceof Cat) {
-      if (cow.isAlive) {
-        console.log("Yammi, milk");
-      } else {
-        console.log("Ichas , blood");
-      }
+    // if (this instanceof Cat) {
+    //   if (cow.isAlive) {
+    //     console.log("Yammi, milk");
+    //   } else {
+    //     console.log("Ichas , blood");
+    //   }
+    // } else {
+    //   console.log("You are not a cat");
+    // }
+
+    if (cow.isAlive) {
+      console.log("Yammi, milk");
     } else {
-      console.log("You are not a cat");
+      console.log("Ichas , blood");
     }
   }
 
