@@ -18,8 +18,15 @@ bumper.drinkMilk(mumu);
 lion.eatCow(mumu);
 bumper.drinkMilk(mumu);
 
+<<<<<<< HEAD
 let zeev = new Animal("zeev", 48, "white", "haouuuuuuuu");
 console.log("--=-=-=-=-=-=-=-=-=-=--");
 console.log(zeev);
 
 console.log(bumper.getLength());
+=======
+//let zeev = new Animal("zeev", 48, "white", "haouuuuuuuu");
+//console.log(zeev);
+
+console.log ("another one bite the dust");
+>>>>>>> bae8ec6d8d2e899d0b185c3206e2d9dc5b8cdd47
