@@ -1,3 +1,5 @@
+import Cow from "./cls/Cow";
+import Lion from "./cls/Lion";
 import Person from "./cls/Person";
 
 console.log("Hello World !!!!");
@@ -19,9 +21,9 @@ console.log("Hello World !!!!");
 // console.log(person);
 // console.log(person2);
 
-let zeev = new Person("zeev", 48, true, "Qiryat Yam", "123456");
-let adam = new Person("adam", 31, true, "ram gan", "1234");
-let alon = new Person("aln", 18, false, "natanya", "54321");
+// let zeev = new Person("zeev", 48, true, "Qiryat Yam", "123456");
+// let adam = new Person("adam", 31, true, "ram gan", "1234");
+// let alon = new Person("aln", 18, false, "natanya", "54321");
 
 // console.log(zeev);
 
@@ -36,11 +38,27 @@ let alon = new Person("aln", 18, false, "natanya", "54321");
 //   console.log("Why who are you?");
 // }
 
-console.log(zeev.getName());
-console.log(adam.getName());
-console.log(alon.getName());
+// console.log(zeev.getName());
+// console.log(adam.getName());
+// console.log(alon.getName());
 
-alon.setName("alon");
-zeev.setName("Zeevik the fox");
-console.log(alon.getName());
-console.log(zeev.getName());
+// alon.setName("alon");
+// zeev.setName("Zeevik the fox");
+// console.log(alon.getName());
+// console.log(zeev.getName());
+
+let lion = new Lion("Lev", 3, "Brown", false);
+let mushMush = new Cow("Mush", 4, "Brown white", true);
+let mumu = new Cow("mumu", 2, "white black", false);
+
+console.log(lion);
+console.log(mushMush);
+console.log(mumu);
+
+lion.eatCow(mushMush);
+
+console.log("=============================");
+
+console.log(lion);
+console.log(mushMush);
+console.log(mumu);
