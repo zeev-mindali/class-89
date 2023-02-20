@@ -5,6 +5,7 @@ html,body,#root{
   text-align: center;
   color: darkcyan;
   background-image: linear-gradient(45deg,lightblue,white);
+  direction: rtl;
 }
 
 .Box{
