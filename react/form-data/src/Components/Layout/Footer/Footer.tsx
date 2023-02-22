@@ -25,7 +25,6 @@ function Footer(): JSX.Element {
     setInterval(() => {
       let myName = randomName();
       setNewName(myName);
-      console.log(myName);
     }, 1000);
   }, []);
 
