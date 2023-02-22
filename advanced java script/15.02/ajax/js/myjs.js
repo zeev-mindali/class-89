@@ -2,7 +2,7 @@ const url = "https://restcountries.com/v3.1/all";
 //const total = 20;
 let allCountries = [];
 let totalPopulation = 0;
-const countries = 2;
+const countries = 100;
 const myRegions = {};
 
 $(async () => {

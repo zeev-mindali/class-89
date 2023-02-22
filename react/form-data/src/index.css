@@ -1,0 +1,21 @@
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  text-align: center;
+  color: darkcyan;
+  background-image: linear-gradient(45deg, lightblue, white);
+}
+
+.Box {
+  display: inline-block;
+  text-align: center;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px;
+  width: 20%;
+}
