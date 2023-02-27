@@ -7,6 +7,7 @@ import HandiCap from "../../Pages/HandiCap/HandiCap";
 import OffRoad from "../../Pages/OffRoad/OffRoad";
 import Page404 from "../../Pages/Page404/Page404";
 import Truck from "../../Pages/Truck/Truck";
+import "./MainRouter.css";
 
 function MainRouter(): JSX.Element {
   return (
