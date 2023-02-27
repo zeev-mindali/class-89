@@ -24,6 +24,8 @@ function Menu(): JSX.Element {
       <NavLink to="/offroad">Find Off road</NavLink>
       <br />
       <br />
+      <NavLink to="/citystreet">find city and street</NavLink>
+      <hr />
       <NavLink to="/addnew">
         <h2>Add New vehicle</h2>
       </NavLink>
