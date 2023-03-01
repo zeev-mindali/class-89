@@ -1,0 +1,11 @@
+.MainLayout {
+  height: 100%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 15% 85%;
+}
+
+.MainLayout,
+.MainLayout > * {
+  border: 1px solid white;
+}
