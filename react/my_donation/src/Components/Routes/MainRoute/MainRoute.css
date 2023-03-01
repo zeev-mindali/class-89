@@ -1,3 +1,4 @@
 .MainRoute {
-	
+  overflow: auto;
+  height: 100%;
 }
