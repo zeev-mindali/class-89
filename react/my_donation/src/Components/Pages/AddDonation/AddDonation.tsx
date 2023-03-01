@@ -14,3 +14,6 @@ function AddDonation(): JSX.Element {
 }
 
 export default AddDonation;
+//name
+//sum disabled
+//memo
