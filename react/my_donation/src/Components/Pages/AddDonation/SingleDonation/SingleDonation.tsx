@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import "./SingleDonation.css";
 
 interface SingleProps {
@@ -5,13 +6,17 @@ interface SingleProps {
 }
 
 function SingleDonation(props: SingleProps): JSX.Element {
+  const navigate = useNavigate();
   return (
     <div className="SingleDonation Box">
-      <h1>{props.donationSum == 0 ? "Other sum" : props.donationSum}</h1>
+      <div className="DonateSum">
+        {props.donationSum === 0 ? "Other" : props.donationSum}
+        {props.donationSum === 0 && ":)"}
+      </div>
       <br />
-      <br />
-      <br />
-      <input type="button" />
+      <button onClick={() => navigate(`/info/${props.donationSum}`)}>
+        Donate
+      </button>
     </div>
   );
 }

@@ -1,3 +1,13 @@
 .SingleDonation {
-	
+}
+button {
+  padding: 20px;
+  width: 80%;
+  margin-bottom: 20px;
+  font-size: 30px;
+  background-color: #009dff;
+  color: white;
+}
+.DonateSum {
+  font-size: 100px;
 }
