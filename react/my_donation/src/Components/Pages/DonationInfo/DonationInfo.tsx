@@ -5,8 +5,8 @@ import "./DonationInfo.css";
 function DonationInfo(): JSX.Element {
   const navigate = useNavigate();
   const params = useParams();
-  const mySum = +(params.sum || 0);
-  const [sum, setSum] = useState(mySum);
+  const userDonation = +(params.donationSum || 0);
+  const [sum, setSum] = useState(userDonation);
   const [donar, setDonar] = useState("");
   const [memo, setMemo] = useState("");
 
