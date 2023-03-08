@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Donation from "../../models/donation";
+import Donation from "../../../models/donation";
 import "./DonationInfo.css";
 
 function DonationInfo(): JSX.Element {

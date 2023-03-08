@@ -1,4 +1,4 @@
-import Donation from "../../models/donation";
+import Donation from "../../../models/donation";
 import "./DonationList.css";
 
 function DonationList(): JSX.Element {
