@@ -1,3 +1,22 @@
 .DonationList {
-	
+    text-align: center;
 }
+table{
+    margin:auto;
+    border-collapse: collapse;
+}
+th{
+    background-color: black;
+    color:white;
+}
+td,th{
+    border: 1px solid black;
+   padding: 15px;
+}
+tr:nth-child(even){
+    background: lightblue;
+}
+tr:nth-child(odd){
+    background-color: lightgreen;
+}
+

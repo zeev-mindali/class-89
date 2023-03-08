@@ -7,6 +7,7 @@ interface SingleProps {
 
 function SingleDonation(props: SingleProps): JSX.Element {
   const navigate = useNavigate();
+  //console.log("value: ",props.donationSum);
   return (
     <div className="SingleDonation Box">
       <div className="DonateSum">

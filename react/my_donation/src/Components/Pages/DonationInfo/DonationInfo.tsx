@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import Donation from "../../models/donation";
 import "./DonationInfo.css";
 
 function DonationInfo(): JSX.Element {
@@ -9,10 +10,23 @@ function DonationInfo(): JSX.Element {
   const [sum, setSum] = useState(userDonation);
   const [donar, setDonar] = useState("");
   const [memo, setMemo] = useState("");
+  let myDonations:Donation[] = [];
+
+  //console.log("value: ",userDonation);
 
   const makeDonation = () => {
-    //save to local hdd
+    const timeStamp = new Date().getTime();
     //navigate to thank you
+    //object = timeStamp, donarName, sum, memo;
+    const itemToSave = new Donation(timeStamp,donar,sum,memo);
+    //console.log(itemToSave);
+    //save to local hdd
+    if (localStorage.getItem("userDonation")){
+      myDonations=JSON.parse(localStorage.getItem("userDonation"));
+    } 
+    //myDonations = Object
+    myDonations.push(itemToSave);
+    localStorage.setItem("userDonation", JSON.stringify(myDonations));
     navigate("/thanks");
   };
   return (
@@ -27,14 +41,14 @@ function DonationInfo(): JSX.Element {
         />
         <br />
         <br />
-        {params.sum === "0" ? (
+        {userDonation === 0 ? (
           <input
             type="number"
             onChange={(args) => setSum(+args.target.value)}
             placeholder="donation sum..."
           />
         ) : (
-          <h2>{params.sum} nis</h2>
+          <h2>{userDonation} nis</h2>
         )}
         <br />
         <br />
