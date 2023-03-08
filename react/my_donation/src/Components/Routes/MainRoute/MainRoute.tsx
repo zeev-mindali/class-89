@@ -15,7 +15,7 @@ function MainRoute(): JSX.Element {
       <Routes>
         <Route path="/about" element={<AboutUs />} />
         <Route path="/add" element={<AddDonation />} />
-        <Route path="/info/:donationSum" element={<DonationInfo />} />
+        <Route path="/info/:donationSum/:donationOwner/:donationMemo/:timeStamp" element={<DonationInfo />} />
         <Route path="/list" element={<DonationList />} />
         <Route path="/thanks" element={<ThankYou />} />
         <Route path="/" element={<MainPage />} />

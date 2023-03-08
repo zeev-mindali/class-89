@@ -49,7 +49,7 @@ function DonationList(): JSX.Element {
               <td>{donation.donarName}</td>
               <td>{donation.donarSum}</td>
               <td>{donation.donarMemo}</td>
-              <td onClick={()=>navigate("/info")}>✏️</td>
+              <td onClick={()=>navigate(`/info/${donation.donarSum}/${donation.donarName}/${donation.donarMemo}/${donation.timeStamp}`)}>✏️</td>
               <td onClick={()=>deleteDonation(donation.timeStamp)}>❌</td>
             </tr>
             )}
