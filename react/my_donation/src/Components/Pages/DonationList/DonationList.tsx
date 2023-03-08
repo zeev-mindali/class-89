@@ -3,7 +3,12 @@ import "./DonationList.css";
 
 function DonationList(): JSX.Element {
   const donationList:Donation[] = JSON.parse(localStorage.getItem("userDonation"));
-  console.log("donation list: ",donationList);
+  //console.log("donation list: ",donationList);
+
+  const getDate = (timeStamp:number)=>{
+    return new Date(timeStamp).toLocaleString(); //convert timestamp 5746387832=>local date 08/03/2023
+  }
+
   return (
     <div className="DonationList">
       <h1>Donation list</h1>
@@ -20,7 +25,7 @@ function DonationList(): JSX.Element {
           <tbody>
             {donationList.map(donation=>
             <tr key={donation.timeStamp}>
-              <td>{donation.timeStamp}</td>
+              <td>{getDate(donation.timeStamp)}</td>
               <td>{donation.donarName}</td>
               <td>{donation.donarSum}</td>
               <td>{donation.donarMemo}</td>
