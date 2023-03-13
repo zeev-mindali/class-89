@@ -3,6 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import Car from "../../Modal/Car";
 import "./Edit.css";
 import { useForm } from "react-hook-form";
+import { Button, ButtonGroup, TextField, Typography } from "@mui/material";
+import { Person } from "@mui/icons-material";
 
 function Edit(): JSX.Element {
   const navigate = useNavigate();
@@ -37,9 +39,17 @@ function Edit(): JSX.Element {
     console.log(carData);
   };
 
+  const requiredTemplate = {
+    required: {
+      value: true,
+      message: "שדה זה הינו חובה מתן!!!!",
+    },
+  };
   return (
     <div className="Edit Box">
-      <h2>{+params.parkingNumber + " חנייה מספר "}</h2>
+      <Typography variant="h2" className="HeadLine">
+        {+params.parkingNumber + " חנייה מספר "}
+      </Typography>
       <hr />
       <form onSubmit={handleSubmit(send)}>
         <input
@@ -55,17 +65,37 @@ function Edit(): JSX.Element {
         />
         <br />
         <span className="ErrMsg">{errors.carNum?.message}</span>
+        <br />
+        <Person style={{ fontSize: 40, margin: 10 }} />
+        <TextField
+          label="Car Owner"
+          variant="outlined"
+          inputProps={{ sx: { color: "white" } }}
+          {...register("carOwner", {
+            required: { value: true, message: "למה מי אתה?" },
+            min: { value: 5, message: "שם קצר מדי, אתה לא דובי גל" },
+          })}
+        />
+        <span className="ErrMsg">{errors.carNum?.message}</span>
+        <br />
         <input
           type="text"
           placeholder="car owner..."
-          {...register("carOwner")}
+          {...register("carOwner", {
+            required: { value: true, message: "למה מי אתה?" },
+            min: { value: 5, message: "שם קצר מדי, אתה לא דובי גל" },
+          })}
         />
+        <br />
+        <span className="ErrMsg">{errors.carOwner?.message}</span>
         <br />
         <input
           type="text"
           placeholder="owner phone..."
-          {...register("ownerPhone")}
+          {...register("ownerPhone", requiredTemplate)}
         />
+        <br />
+        <span className="ErrMsg">{errors.ownerPhone?.message}</span>
         <br />
         <input
           type="number"
@@ -90,8 +120,17 @@ function Edit(): JSX.Element {
           value={+params.parkingNumber}
           {...register("parkingNumber")}
         />
-        <input type="submit" value="שינוי" />
-        <input type="button" value="ביטול" />
+        <br />
+        <ButtonGroup
+          variant="contained"
+          aria-label="outlined primary button group"
+          fullWidth
+        >
+          <Button color="secondary">ביטול</Button>
+          <Button color="primary" type="submit">
+            שינוי
+          </Button>
+        </ButtonGroup>
       </form>
     </div>
   );
