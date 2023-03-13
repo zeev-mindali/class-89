@@ -23,11 +23,10 @@ function Parking(): JSX.Element {
   return (
     <div className="Parking">
       <h1>Parking List</h1>
-      <>
-        {parking.map((item) => (
-          <Slot carData={item} />
-        ))}
-      </>
+
+      {parking.map((item) => (
+        <Slot key={item.parkingNumber} carData={item} />
+      ))}
     </div>
   );
 }

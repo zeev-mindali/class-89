@@ -8,24 +8,17 @@ interface carProps {
 
 function Slot(props: carProps): JSX.Element {
   const navigate = useNavigate();
-
   return (
     <div className="Slot Box">
-      <h2>{props.carData.getParkingNumber() + 1}</h2>
+      <h2>{props.carData.parkingNumber + 1}</h2>
       <hr />
-      <h3>
-        {props.carData.getCarNum() !== "na"
-          ? props.carData.getCarNum()
-          : "לא הוקצה"}
-        <br />
-        {props.carData.getCarNum() !== "na" && props.carData.getCarOwner()}
-        <button
-          onClick={() => navigate(`/edit/${props.carData.getParkingNumber()}`)}
-        >
-          מידע נוסף
-        </button>
-        <br />
-      </h3>
+      {props.carData.carNum === "na" ? "לא מוקצה" : props.carData.carNum}
+      <br />
+      {props.carData.carNum !== "na" && props.carData.carOwner}
+      <br />
+      <button onClick={() => navigate(`/edit/${props.carData.parkingNumber}`)}>
+        מידע נוסף
+      </button>
     </div>
   );
 }

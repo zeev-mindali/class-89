@@ -1,11 +1,11 @@
 class Car {
-  private carNum: string;
-  private carOwner: string;
-  private ownerPhone: string;
-  private ownerFlat: number;
-  private ownerCars: number;
-  private ownerBuilding: number;
-  private parkingNumber: number;
+  public carNum: string;
+  public carOwner: string;
+  public ownerPhone: string;
+  public ownerFlat: number;
+  public ownerCars: number;
+  public ownerBuilding: number;
+  public parkingNumber: number;
 
   constructor(
     carNum: string,
