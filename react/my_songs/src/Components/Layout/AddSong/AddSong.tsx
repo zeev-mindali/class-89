@@ -3,6 +3,8 @@ import Select from "@mui/material/Select";
 import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { json } from "stream/consumers";
 import cat from "../../../Model/Cat";
 import Song from "../../../Model/Song";
 import "./AddSong.css";
@@ -11,6 +13,7 @@ function AddSong(): JSX.Element {
   const apiKey = "AIzaSyCTV38_t5fqYC5joDmQZdE_fhB8n7O4zxQ";
   const [songImg, setImg] = useState("");
   const [songName, setSongName] = useState("");
+  const navigate = useNavigate();
 
   const {
     register,
@@ -19,6 +22,7 @@ function AddSong(): JSX.Element {
   } = useForm<Song>();
 
   const send = (userData: Song) => {
+    let songs: Song[] = [];
     console.log(userData);
     //working with google cloud :)
     const songIdentifier = userData.url.split("=")[1];
@@ -29,7 +33,29 @@ function AddSong(): JSX.Element {
       .then((response) => {
         setImg(response.data.items[0].snippet.thumbnails.default.url);
         setSongName(response.data.items[0].snippet.title);
-        console.log(response.data.items[0].snippet);
+        userData.songImg =
+          response.data.items[0].snippet.thumbnails.default.url;
+        userData.songName = response.data.items[0].snippet.title;
+        //console.log(response.data.items[0].snippet);
+        console.log(userData);
+        //check if we have a key for songs in our localstorage
+        // if (localStorage.getItem("songs")) {
+        //   //the key exists
+        //   let songs = JSON.parse(localStorage.getItem("songs"));
+        //   songs.push(userData);
+        //   localStorage.setItem("songs", JSON.stringify(songs));
+        // } else {
+        //   //we don't have the key
+        //   let songs = [];
+        //   songs.push(userData);
+        //   localStorage.setItem("songs", JSON.stringify(songs));
+        // }
+        songs = localStorage.getItem("songs")
+          ? JSON.parse(localStorage.getItem("songs"))
+          : [];
+        songs.push(userData);
+        localStorage.setItem("songs", JSON.stringify(songs));
+        navigate("/");
       });
   };
 
