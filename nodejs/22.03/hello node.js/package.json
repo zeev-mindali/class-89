@@ -1,0 +1,17 @@
+{
+  "name": "22.03",
+  "version": "1.0.0",
+  "description": "npm i [package name]\r npm i --save-dev [package]\r npm i -g [package]\r npm i [packageName]@latest\r npm i [packageName]@4.5.2\r ------------------------------------\r npm init -y",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec ts-node firstFile.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.21",
+    "ts-node": "^10.9.1"
+  }
+}

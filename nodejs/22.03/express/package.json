@@ -1,0 +1,29 @@
+{
+  "name": "express_demo",
+  "version": "1.0.0",
+  "description": "a demo for class 89 , the best that lecturer can get",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "js",
+    "node.js",
+    "class",
+    "89",
+    "kill",
+    "nadav"
+  ],
+  "author": "zeev mindali",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express-fileupload": "^1.4.1",
+    "@types/morgan": "^1.9.4",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "loadsh": "^0.0.4"
+  }
+}
