@@ -20,9 +20,8 @@ import VideoLogic from "../Logic/VideoLogicMYSQL";
 //videoUpdate => PUT
 
 const router = express.Router();
-
 router.post(
-  "/addVideo",
+  "addVideo",
   async (request: Request, response: Response, next: NextFunction) => {
     const body = request.body;
     console.log("Request Body: ", body);
@@ -33,7 +32,7 @@ router.post(
 // URL=> http://localhost:8080/deleteVideo/5
 // axios.delete("http://localhost:8080/deleteVideo/5") <= react
 router.delete(
-  "/deleteVideo/:id",
+  "deleteVideo/:id",
   async (request: Request, response: Response, next: NextFunction) => {
     const videoId = +request.params.id || null;
     if (videoId === null || videoId < 1) {
@@ -45,8 +44,9 @@ router.delete(
 );
 
 router.get(
-  "/videoList",
+  "videoList",
   async (request: Request, response: Response, next: NextFunction) => {
     response.status(200).json(await VideoLogic.videoList());
   }
 );
+export default router;
