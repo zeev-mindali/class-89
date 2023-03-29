@@ -16,3 +16,28 @@ CREATE TABLE IF NOT EXISTS `youtube`.`category` (
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC) VISIBLE);
+
+
+
+insert new data into songs table
+=====================================
+INSERT INTO `youtube`.`songs` 
+(`url`, `songName`, `songImg`, `category`, `videoFile`)
+ VALUES 
+ ('https://www.youtube.com/watch?v=R0ebIzABQm0', 'In The Shadows of Ukraine', 'https://i.ytimg.com/vi/R0ebIzABQm0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBsne6G4S3bSWQPzdARU4IvvcGNtw', '1', 'R0ebIzABQm0');
+
+
+delete data 
+========================
+DELETE FROM songs where id=1
+
+
+joining two tables
+===========================
+SELECT songs.* , category.name as categoryName
+FROM songs JOIN category
+ON songs.category = category.id
+
+for updating data
+======================
+UPDATE `youtube`.`songs` SET `category` = '2' WHERE (`id` = '3');
