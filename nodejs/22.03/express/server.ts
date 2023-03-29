@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import cors from "cors"; //npm install cors
 import express from "express";
 import fileUpload from "express-fileupload";
+import loginRouter from "./Routes/LoginRoutes";
 import router from "./Routes/VideoRoutes";
 
 //create server
@@ -23,9 +24,11 @@ server.use(fileUpload({ createParentPath: true }));
 //parse the body as json , for easy work
 server.use(bodyParser.json());
 
+
 //how to use the routes
 //all videos => http://localhost:3000/api/v1/videos/videoList
-server.use("api/v1/videos/",router);
+server.use("api/v1/videos/", router);
+server.use("api/v1/users/", loginRouter);
 
 //handle errors (route not found)
 

@@ -1,0 +1,18 @@
+create songs table
+=========================================
+CREATE TABLE IF NOT EXISTS `youtube`.`songs` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `url` VARCHAR(45) NOT NULL,
+  `songName` VARCHAR(45) NOT NULL,
+  `songImg` VARCHAR(45) NOT NULL,
+  `category` INT NOT NULL,
+  `videoFile` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
+
+create category table
+============================
+CREATE TABLE IF NOT EXISTS `youtube`.`category` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC) VISIBLE);
