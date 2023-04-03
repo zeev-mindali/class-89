@@ -3,6 +3,7 @@ import Category from "../Models/Cat";
 
 import dal_mysql from "../Utils/dal_mysql";
 import { OkPacket } from "mysql";
+import { response } from "express";
 
 //add song, update song, delete song, getSongById, getAllSongs
 //add category, delete category, updateCategory, getAllCategory
@@ -20,13 +21,32 @@ const addSong = async (newSong: Song) => {
   return result.insertId;
 };
 
-const updateSong = (song: Song) => {};
+const updateSong = async (song: Song) => {
+  const SQLcommands = `
+    UPDATE 
+    youtube.songs 
+    SET url = '${song.url}', songName = '${song.songName}', songImg = '${song.songImg}', category = ${song.category}, videoFile = '${song.videoFile}' 
+    WHERE 
+    (id = ${song.id});
+    `;
+  await dal_mysql.execute(SQLcommands);
+  return true;
+};
 
-const deleteSong = (id: number) => {};
+const deleteSong = (id: number) => {
+  const SQLcommand = `DELETE FROM youtube.songs WHERE id=${id}`;
+  dal_mysql.execute(SQLcommand);
+  return true;
+};
 
-const getSongById = (id: number) => {};
+const getSongById = async (id: number) => {
+  return await dal_mysql.execute(`SELECT * FROM youtube.songs WHERE id =${id}`);
+};
 
-const getAllSongs = () => {};
+const getAllSongs = async () => {
+  const SQLcommand = `SELECT * FROM youtube.songs`;
+  return await dal_mysql.execute(SQLcommand);
+};
 
 const createSongsTable = () => {
   const SQLcommand = `CREATE TABLE IF NOT EXISTS youtube.songs
