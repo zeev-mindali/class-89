@@ -13,4 +13,5 @@ const ErrorHandler = (
   next(err);
 };
 
+export default ErrorHandler;
 //all we hear from you is blah blah blah blah

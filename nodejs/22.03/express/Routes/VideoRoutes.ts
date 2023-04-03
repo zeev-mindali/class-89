@@ -3,6 +3,7 @@ import cors from "cors";
 import express, { NextFunction, Request, Response } from "express";
 import fileUpload from "express-fileupload";
 import VideoLogic from "../Logic/VideoLogicMYSQL";
+import VideoLogicMYSQL from "../Logic/VideoLogicMYSQL";
 
 //REST :
 //GET    => www.johnbryce.co.il/login/?user=zeev&password=12345                   => upto 256 char
@@ -20,33 +21,43 @@ import VideoLogic from "../Logic/VideoLogicMYSQL";
 //videoUpdate => PUT
 
 const router = express.Router();
-router.post(
-  "addVideo",
-  async (request: Request, response: Response, next: NextFunction) => {
-    const body = request.body;
-    console.log("Request Body: ", body);
-    response.status(201).json("{'msg':'video was uploaded'}");
-  }
-);
 
-// URL=> http://localhost:8080/deleteVideo/5
-// axios.delete("http://localhost:8080/deleteVideo/5") <= react
-router.delete(
-  "deleteVideo/:id",
+router.post(
+  "/addVideo",
   async (request: Request, response: Response, next: NextFunction) => {
-    const videoId = +request.params.id || null;
-    if (videoId === null || videoId < 1) {
-      response.status(404).json("{'msg':'video not found'}");
-    }
-    console.log("deleteing ");
-    response.status(204);
+    //get the body, which represent our object
+    const newSong = request.body;
+    //send the command to mysql
+    const result = await VideoLogicMYSQL.addSong(newSong);
+    //response to user
+    response.status(201).json(result);
   }
 );
 
 router.get(
-  "videoList",
+  "/newCat/:catName",
   async (request: Request, response: Response, next: NextFunction) => {
-    response.status(200).json(await VideoLogic.videoList());
+    // console.log("in video routes");
+    // console.log(request.params.catName);
+    //const catName = request.body["name"];
+    response
+      .status(201)
+      .json(await VideoLogicMYSQL.addCategory(request.params.catName));
   }
 );
+
+router.get(
+  "/allCat",
+  async (request: Request, response: Response, next: NextFunction) => {
+    response.status(200).json(await VideoLogicMYSQL.getAllCategories());
+  }
+);
+
+router.get(
+  "/",
+  async (request: Request, response: Response, next: NextFunction) => {
+    response.status(200).json("Controller working !!!");
+  }
+);
+
 export default router;

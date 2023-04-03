@@ -3,19 +3,17 @@ import config from "./config";
 
 //creating a conneciton object
 const connection = mysql.createPool({
-  host: config.mySQLhost,
-  user: config.mySQLuser,
-  password: config.mySQLpass,
-  database: config.mySQLdatabase,
+    host: config.mySQLhost,
+    user: config.mySQLuser,
+    password: config.mySQLpass,
+    database: config.mySQLdatabase,
 });
 
-console.log("we are connected to my sql");
-
-const execute = (sql:string):Promise<any>=>{
-    return new Promise<any>((resolve,reject)=>{
+const execute = (sql: string): Promise<any> => {
+    return new Promise<any>((resolve, reject) => {
         //connection and execute the sql command
-        connection.query(sql,(err,res)=>{
-            if (err){
+        connection.query(sql, (err, res) => {
+            if (err) {
                 reject(err);
                 return;
             }

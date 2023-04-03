@@ -5,6 +5,9 @@ import express from "express";
 import fileUpload from "express-fileupload";
 import loginRouter from "./Routes/LoginRoutes";
 import router from "./Routes/VideoRoutes";
+import config from "./Utils/config";
+import logic from "./Logic/VideoLogicMYSQL";
+import ErrorHandler from "./MiddleWare/route-not-found";
 
 //create server
 const server = express();
@@ -24,12 +27,20 @@ server.use(fileUpload({ createParentPath: true }));
 //parse the body as json , for easy work
 server.use(bodyParser.json());
 
-
 //how to use the routes
-//all videos => http://localhost:3000/api/v1/videos/videoList
-server.use("api/v1/videos/", router);
-server.use("api/v1/users/", loginRouter);
+//all categories (becuase of hila) => http://localhost:8080/api/v1/videos/newCat/catName
+server.use("/api/v1/videos", router);
+server.use("/api/v1/users", loginRouter);
+
+//create our tables if they not exists
+console.log("check if table exists...");
+logic.createSongsTable();
+logic.createCategoriesTable();
 
 //handle errors (route not found)
+server.use("*", ErrorHandler);
 
 //start the server
+server.listen(config.WebPort, () => {
+  console.log(`listinging on http://${config.mySQLhost}:${config.WebPort}`);
+});
