@@ -7,7 +7,7 @@ function Menu(): JSX.Element {
 
   useEffect(() => {
     if (localStorage.getItem("Categories")) {
-      setCategories(JSON.parse(localStorage.getItem("Categories") as any));
+      //setCategories(JSON.parse(localStorage.getItem("Categories") as any));
     }
   }, []);
 

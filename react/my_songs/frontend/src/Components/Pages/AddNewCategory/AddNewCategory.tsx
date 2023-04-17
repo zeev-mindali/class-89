@@ -1,48 +1,75 @@
-import { SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 import "./AddNewCategory.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function AddNewCategory(): JSX.Element {
-    const [category,setCategory] = useState("");
-    const navigate = useNavigate();
+  const [category, setCategory] = useState("");
+  const [categories, setCategories] = useState([]);
 
-    const myCategory = (args:SyntheticEvent)=>{
-        let value = (args.target as HTMLInputElement).value;
-        setCategory(value);
-    }
+  const languages = ["name", "heb", "eng", "rus", "hindi"];
 
-    const addNewCat = ()=>{
-        // let categories;
-        // if (localStorage.getItem("category")){
-        //     // what i need to do if i already have categories???
-        //    categories = JSON.parse(localStorage.getItem("Categories") as any);
-        //    categories.push(category)
-        //    localStorage.setItem("Categories",JSON.stringify(categories));
-        // } else {
-        //    //if i don't have any categories....
-        //    categories = [];
-        //    categories.push(category)
-        //    localStorage.setItem("Categories",JSON.stringify(categories));
-        // }
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/api/v1/videos/allCat")
+      .then((res) => setCategories(res.data));
+  }, []);
 
-        let categories = localStorage.getItem("Categories")?JSON.parse(localStorage.getItem("Categories") as any):[];
-        if (categories.includes(category)){
-            alert ("i have this shit");
-            return;
-        }
-        categories.push(category)
-        localStorage.setItem("Categories",JSON.stringify(categories));
-        navigate("/")
-    } 
+  const navigate = useNavigate();
 
-    return (
-        <div className="AddNewCategory">
-			<div className="Box">
-                <input placeholder="Category name..." onKeyUp={(args)=>{setCategory(args.currentTarget.value)}}/>
-                <input type="submit" value="add" onClick={addNewCat}/>
-            </div>
-        </div>
-    );
+  const myCategory = (args: SyntheticEvent) => {
+    let value = (args.target as HTMLInputElement).value;
+    setCategory(value);
+  };
+
+  const addNewCat = () => {
+    axios
+      .get(`http://localhost:4000/api/v1/videos/newCat/${category}`)
+      .then((res) => navigate("/"));
+  };
+
+  return (
+    <div className="AddNewCategory">
+      <div className="Box">
+        <input
+          placeholder="Category name..."
+          onKeyUp={(args) => {
+            setCategory(args.currentTarget.value);
+          }}
+        />
+        <input type="submit" value="add" onClick={addNewCat} />
+      </div>
+      <hr />
+      <table>
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>name</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          {categories.map((item) => (
+            <tr key={item["id"]}>
+              <td>{item["id"]}</td>
+              <td>{item[languages[0]]}</td>
+              <td>✏</td>
+              <td
+                onClick={() => {
+                  axios.delete(
+                    `http://localhost:4000/api/v1/videos/deleteCat/${item["id"]}`
+                  );
+                }}
+              >
+                ❌
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
 export default AddNewCategory;

@@ -88,6 +88,13 @@ router.get(
   }
 );
 
+router.delete(
+  "/deleteCat/:catID",
+  async (request: Request, response: Response, next: NextFunction) => {
+    response.status(201).json(VideoLogic.deleteCategory(+request.params.catID));
+  }
+);
+
 router.get(
   "/",
   async (request: Request, response: Response, next: NextFunction) => {
