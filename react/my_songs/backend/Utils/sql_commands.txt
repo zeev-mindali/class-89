@@ -1,0 +1,19 @@
+songs table
+==================
+CREATE TABLE `youtube`.`songs` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `description` VARCHAR(255) NULL,
+  `img` VARCHAR(255) NULL,
+  `title` VARCHAR(255) NULL,
+  `url` VARCHAR(255) NULL,
+  `video_file` VARCHAR(255) NULL,
+  `category` INT NULL,
+  PRIMARY KEY (`id`));
+
+
+category table
+=========================
+CREATE TABLE `youtube`.`categories` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
