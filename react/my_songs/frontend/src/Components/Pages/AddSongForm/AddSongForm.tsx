@@ -31,7 +31,11 @@ function AddSongForm(): JSX.Element {
         let allSongs = JSON.parse(localStorage.getItem("songs") as any);
         const newSong = new Song(songDesc,songImg,songTitle,songURL);
         allSongs.push(newSong);
-        localStorage.setItem("songs",JSON.stringify(allSongs));
+        //save to local storage
+        //localStorage.setItem("songs",JSON.stringify(allSongs));
+
+        //send data to backend, for saving the information...
+        
         navigate("/");
     }
 
