@@ -36,7 +36,8 @@ function AddSongForm(): JSX.Element {
     //localStorage.setItem("songs",JSON.stringify(allSongs));
 
     //send data to backend, for saving the information...
-    youtube.dispatch(addSongAction(newSong));
+    //youtube.dispatch(addSongAction(newSong));
+    youtube.getState().songs.allSongs.push(newSong);
     axios
       .post("http://localhost:4000/api/v1/videos/addVideo", newSong)
       .then((res) => navigate("/"));

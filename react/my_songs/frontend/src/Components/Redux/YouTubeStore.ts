@@ -11,5 +11,3 @@ export const youtube = configureStore({
   reducer: reducers,
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
-
-

@@ -36,6 +36,7 @@ export const downloadSongsAction = (allSongs: Song[]): SongAction => {
   return { type: SongActionType.downloadSongs, payload: allSongs };
 };
 
+//this is the reducer function, but since it's manged only by redux, we built the function above
 export function SongReducer(
   currentState: SongsState = new SongsState(),
   action: SongAction
