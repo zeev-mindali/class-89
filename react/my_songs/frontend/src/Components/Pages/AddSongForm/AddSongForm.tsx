@@ -3,6 +3,8 @@ import "./AddSongForm.css";
 import axios from "axios";
 import Song from "../../modal/Song";
 import { useNavigate } from "react-router-dom";
+import { youtube } from "../../Redux/YouTubeStore";
+import { addSongAction } from "../../Redux/SongReducer";
 
 function AddSongForm(): JSX.Element {
   //demo song=> https://www.youtube.com/watch?v=Ggafij3sZ1g
@@ -34,6 +36,7 @@ function AddSongForm(): JSX.Element {
     //localStorage.setItem("songs",JSON.stringify(allSongs));
 
     //send data to backend, for saving the information...
+    youtube.dispatch(addSongAction(newSong));
     axios
       .post("http://localhost:4000/api/v1/videos/addVideo", newSong)
       .then((res) => navigate("/"));

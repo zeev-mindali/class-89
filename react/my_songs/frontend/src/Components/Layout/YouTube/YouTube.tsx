@@ -3,18 +3,20 @@ import SingleItem from "./SingleItem/SingleItem";
 import "./YouTube.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { youtube } from "../../Redux/YouTubeStore";
+import { downloadSongsAction } from "../../Redux/SongReducer";
 
 function YouTube(): JSX.Element {
-  const [songs, setSongs] = useState([]);
-  useEffect(() => {
-    //localStorage
-    //setSongs(JSON.parse(localStorage.getItem("songs") as any))
-    //Backend
-    axios.get("http://localhost:4000/api/v1/videos/all").then((response) => {
-      console.log(response.data);
-      setSongs(response.data);
-    });
-  }, []);
+  //const [songs, setSongs] = useState([]);
+  // useEffect(() => {
+  //localStorage
+  //setSongs(JSON.parse(localStorage.getItem("songs") as any))
+  //Backend
+  // axios.get("http://localhost:4000/api/v1/videos/all").then((response) => {
+  //   console.log(response.data);
+  //   setSongs(response.data);
+  // });
+  //   }, []);
 
   /*
     const songs = [
@@ -57,14 +59,29 @@ function YouTube(): JSX.Element {
     ];
     */
   //localStorage.setItem("songs",JSON.stringify(songs));
+
+  const [refresh, setRefresh] = useState(false);
+
+  useEffect(() => {
+    //redux
+    if (youtube.getState().songs.allSongs.length < 1) {
+      console.log("getting data from backend....");
+      axios.get("http://localhost:4000/api/v1/videos/all").then((response) => {
+        youtube.dispatch(downloadSongsAction(response.data));
+        setRefresh(true);
+      });
+    }
+  }, []);
+
   return (
     <div className="YouTube">
-      {songs.map((item) => (
+      {youtube.getState().songs.allSongs.map((item) => (
         <SingleItem
           url={item["url"]}
           title={item["title"]}
           description={item["description"]}
           img={item["img"]}
+          key={item["title"]}
         />
       ))}
     </div>
