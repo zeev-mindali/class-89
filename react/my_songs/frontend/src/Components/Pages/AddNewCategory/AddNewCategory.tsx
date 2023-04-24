@@ -2,6 +2,9 @@ import { SyntheticEvent, useEffect, useState } from "react";
 import "./AddNewCategory.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { addCategoryAction } from "../../Redux/CategoriesReducer";
+import { Category } from "../../modal/Category";
+import { youtube } from "../../Redux/YouTubeStore";
 
 function AddNewCategory(): JSX.Element {
   const [category, setCategory] = useState("");
@@ -23,6 +26,7 @@ function AddNewCategory(): JSX.Element {
   };
 
   const addNewCat = () => {
+    youtube.dispatch(addCategoryAction(new Category(0,category)))
     axios
       .get(`http://localhost:4000/api/v1/videos/newCat/${category}`)
       .then((res) => navigate("/"));

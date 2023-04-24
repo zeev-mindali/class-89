@@ -22,8 +22,8 @@ function AddSongForm(): JSX.Element {
     const songID = songURL.split("=")[1];
     axios.get(apiURL + songID).then((response) => {
       //console.log(response.data.items[0].snippet.title);
-      setTitle(response.data.items[0].snippet.channelTitle);
-      setDesc(response.data.items[0].snippet.title);
+      setTitle(response.data.items[0].snippet.channelTitle.replace("'", ""));
+      setDesc(response.data.items[0].snippet.title.replace("'", ""));
       setImage(response.data.items[0].snippet.thumbnails.medium.url);
     });
   };
@@ -36,8 +36,8 @@ function AddSongForm(): JSX.Element {
     //localStorage.setItem("songs",JSON.stringify(allSongs));
 
     //send data to backend, for saving the information...
-    //youtube.dispatch(addSongAction(newSong));
-    youtube.getState().songs.allSongs.push(newSong);
+    youtube.dispatch(addSongAction(newSong));
+    //youtube.getState().songs.allSongs.push(newSong); => will not work with redux benefits (subscribe)
     axios
       .post("http://localhost:4000/api/v1/videos/addVideo", newSong)
       .then((res) => navigate("/"));

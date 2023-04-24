@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { youtube } from "../../Redux/YouTubeStore";
 import { downloadSongsAction } from "../../Redux/SongReducer";
+import { downloadCategoryAction } from "../../Redux/CategoriesReducer";
 
 function YouTube(): JSX.Element {
   //const [songs, setSongs] = useState([]);
@@ -68,9 +69,18 @@ function YouTube(): JSX.Element {
       console.log("getting data from backend....");
       axios.get("http://localhost:4000/api/v1/videos/all").then((response) => {
         youtube.dispatch(downloadSongsAction(response.data));
-        setRefresh(true);
       });
+      setRefresh(!refresh);
     }
+    if (youtube.getState().categories.categories.length < 1) {
+      axios
+        .get("http://localhost:4000/api/v1/videos/allCat")
+        .then((response) => {
+          youtube.dispatch(downloadCategoryAction(response.data));
+        });
+      setRefresh(!refresh);
+    }
+    setRefresh(!refresh);
   }, []);
 
   return (

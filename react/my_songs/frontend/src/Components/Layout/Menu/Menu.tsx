@@ -1,15 +1,23 @@
 import { NavLink } from "react-router-dom";
 import "./Menu.css";
 import { useEffect, useState } from "react";
+import { youtube } from "../../Redux/YouTubeStore";
+import { Category } from "../../modal/Category";
 
 function Menu(): JSX.Element {
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState<Category[]>(
+    youtube.getState().categories.categories
+  );
 
-  useEffect(() => {
-    if (localStorage.getItem("Categories")) {
-      //setCategories(JSON.parse(localStorage.getItem("Categories") as any));
-    }
-  }, []);
+  //   useEffect(() => {
+  //     if (localStorage.getItem("Categories")) {
+  //       //setCategories(JSON.parse(localStorage.getItem("Categories") as any));
+  //     }
+  //   }, []);
+
+  youtube.subscribe(() => {
+    setCategories(youtube.getState().categories.categories);
+  });
 
   return (
     <div className="Menu">
@@ -32,8 +40,8 @@ function Menu(): JSX.Element {
       <br />
       <NavLink to="/about">About Us</NavLink>
       <hr />
-      {categories.map((item) => {
-        return <h3>{item}</h3>;
+      {youtube.getState().categories.categories.map((item) => {
+        return <h3 key={item.id}>{item.name}</h3>;
       })}
     </div>
   );

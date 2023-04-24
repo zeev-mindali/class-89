@@ -46,12 +46,14 @@ export function SongReducer(
   switch (action.type) {
     case SongActionType.addSong:
       //will give as an error - data mutation....
-      [...newState.allSongs].push(action.payload);
+      //newState.allSongs.push(action.payload);
+      newState.allSongs = [...newState.allSongs,action.payload]
       break;
     case SongActionType.deleteSong:
-      newState.allSongs = newState.allSongs.filter(
-        (item) => item.title != action.payload
-      );
+    //   newState.allSongs = newState.allSongs.filter(
+    //     (item) => item.title != action.payload
+    //   );
+    newState.allSongs = [...newState.allSongs].filter(item=>item.id !== action.payload)
       break;
     case SongActionType.searchSong:
       newState.allSongs = newState.allSongs.filter((item) =>
