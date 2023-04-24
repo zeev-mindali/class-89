@@ -8,6 +8,7 @@ import router from "./Routes/VideoRoutes";
 import config from "./Utils/config";
 import logic from "./Logic/VideoLogicMYSQL";
 import ErrorHandler from "./MiddleWare/route-not-found";
+import { myBanner } from "./Utils/banner";
 
 //create server
 const server = express();
@@ -39,6 +40,8 @@ logic.createCategoriesTable();
 
 //handle errors (route not found)
 server.use("*", ErrorHandler);
+
+console.log(myBanner)
 
 //start the server
 server.listen(config.WebPort, () => {
