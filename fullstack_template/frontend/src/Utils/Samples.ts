@@ -33,7 +33,7 @@ let testParams = params.data;
 //useForm => https://react-hook-form.com/
 
 //export our functions
-const { register, handleSubmit } = useForm();
+const { register, handleSubmit , formState: { errors } } = useForm();
 
 //create the send arrow function
 const send = async (data: SimpleModal) => {
@@ -43,5 +43,6 @@ const send = async (data: SimpleModal) => {
 
 //html component side
 <form onSubmit={handleSubmit(send)}>
-    <input type="text" {...register("msg")}
+    <input type="text" {...register("msg"),{ required: true }}
+    {errors.msg && <span>This field is required</span>}
 </form>
