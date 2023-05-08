@@ -1,0 +1,11 @@
+.errorBox {
+  width: 300px;
+  border: 1px solid purple;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 2px 2px 5px gainsboro0;
+  background-color: red;
+  margin: auto;
+  padding: 10px;
+  margin-bottom: 20px;
+}
