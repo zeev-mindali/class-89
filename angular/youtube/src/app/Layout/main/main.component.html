@@ -1,1 +1,22 @@
-<p>main works!</p>
+<div class="Box">
+  <br />
+  <input
+    [type]="myType"
+    name="uName"
+    id="user_name"
+    [placeholder]="myPlaceHolder"
+  />
+  <br /><br />
+  <input
+    type="password"
+    name="uPass"
+    id="user_password"
+    placeholder="enter user password"
+    (input)="onPassUpdate($event)"
+  />
+</div>
+<br /><br />
+<div class="Box">
+  <input type="number" name="age" id="id_age" [(ngModel)]="myAge" />
+  <h2>you was burn in {{ 2023 - myAge }}</h2>
+</div>

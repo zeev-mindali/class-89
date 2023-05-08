@@ -8,7 +8,8 @@
   box-shadow: 5px 5px 10px;
 }
 
-* {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
