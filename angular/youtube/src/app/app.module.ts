@@ -7,6 +7,7 @@ import { HeaderComponent } from './Layout/header/header.component';
 import { FooterComponent } from './Layout/footer/footer.component';
 import { MainComponent } from './Layout/main/main.component';
 import { MenuComponent } from './Layout/menu/menu.component';
+import { GreenDirective } from './dir/green.directive';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { MenuComponent } from './Layout/menu/menu.component';
     FooterComponent,
     MainComponent,
     MenuComponent,
+    GreenDirective,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
