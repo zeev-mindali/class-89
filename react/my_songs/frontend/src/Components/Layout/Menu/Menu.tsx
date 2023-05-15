@@ -40,6 +40,7 @@ function Menu(): JSX.Element {
       <br />
       <NavLink to="/about">About Us</NavLink>
       <hr />
+      <NavLink to="/export">Export</NavLink>
       {youtube.getState().categories.categories.map((item) => {
         return <h3 key={item.id}>{item.name}</h3>;
       })}

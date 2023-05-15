@@ -74,7 +74,7 @@ const createCategoriesTable = () => {
 //categories
 const addCategory = async (newCategory: string) => {
   //SQL command for adding new category
-  const SQLcommand = `INSERT INTO categories (name) VALUES ('${newCategory}');`;
+  const SQLcommand = `INSERT INTO category (name) VALUES ('${newCategory}');`;
   console.log("sql>", SQLcommand);
   const response: OkPacket = await dal_mysql.execute(SQLcommand);
   const categoryId = response.insertId;
@@ -84,14 +84,14 @@ const addCategory = async (newCategory: string) => {
 
 const deleteCategory = (id: number) => {
   //console.log("id:", id);
-  const SQLcommand = `DELETE FROM categories WHERE id=${id}`;
+  const SQLcommand = `DELETE FROM category WHERE id=${id}`;
   dal_mysql.execute(SQLcommand);
 };
 
 const updateCategory = (cat: Category) => {};
 
 const getAllCategories = async () => {
-  const SQLcommand = `SELECT * FROM categories`;
+  const SQLcommand = `SELECT * FROM category`;
   return await dal_mysql.execute(SQLcommand);
 };
 
