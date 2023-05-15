@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'hila number 1 site (the best that user can get)';
   showInfo = false;
   userLogged = true;
-
+  grooms = ['Nadav', 'Matan', 'Ido', 'Anton', 'Daniel'];
   onBtnClick() {
     this.userLogged = !this.userLogged;
   }

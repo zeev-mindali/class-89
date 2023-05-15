@@ -10,3 +10,6 @@
   border: 3px solid green;
   padding: 1em;
 }
+li {
+  list-style-type: none;
+}

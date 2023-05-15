@@ -10,12 +10,32 @@
   <br /><br />
   <!-- <h2 *ngIf="showInfo; else hideInfo">Matan and Nadav wants marry maya</h2>
   <ng-template #hideInfo>Maya wants only Alon</ng-template> -->
-  <h2 *ngIf="userLogged; else userInfo">Hello Zeev, Logout</h2>
+
+  <!-- how to use with nfIF , ngStyle, ngClass-->
+  <!-- <h2 *ngIf="userLogged; else userInfo">Hello Zeev, Logout</h2>
   <ng-template #userInfo><h2>Hello Guest, please login</h2></ng-template>
   <button [ngStyle]="{ color: getShowColor() }" (click)="onBtnClick()">
     login/logout</button
   ><br /><br />
   <h3 [ngClass]="{ green_box: !userLogged, red_box: userLogged }">
     ng class test
-  </h3>
+  </h3> -->
+
+  <!-- using ngFor :) -->
+  mans that want to marry with Hila<br />
+  <ul>
+    <!-- <li *ngFor="let item of grooms">{{item}}</li> -->
+    <li *ngFor="let item of grooms; let i = index" [ngSwitch]="item">
+      <span *ngSwitchCase="'Ido'" [ngStyle]="{ color: 'red' }"
+        >{{ i + 1 }} - {{ item }}</span
+      >
+      <span *ngSwitchCase="'Daniel'" [ngStyle]="{ color: 'green' }"
+        >{{ i + 1 }} - {{ item }}</span
+      >
+      <span *ngSwitchCase="'Matan'" [ngStyle]="{ color: 'pink' }"
+        >{{ i + 1 }} - {{ item }}</span
+      >
+      <span *ngSwitchDefault>{{ i + 1 }} - {{ item }}</span>
+    </li>
+  </ul>
 </div>

@@ -8,6 +8,8 @@ import { FooterComponent } from './Layout/footer/footer.component';
 import { MainComponent } from './Layout/main/main.component';
 import { MenuComponent } from './Layout/menu/menu.component';
 import { GreenDirective } from './dir/green.directive';
+import { RedDirective } from './dir/red.directive';
+import { YellowDirective } from './dir/yellow.directive';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { GreenDirective } from './dir/green.directive';
     MainComponent,
     MenuComponent,
     GreenDirective,
+    RedDirective,
+    YellowDirective,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
