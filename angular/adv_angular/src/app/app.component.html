@@ -1,0 +1,21 @@
+<div style="text-align: center">
+  <h1>Welcome to {{ title }}</h1>
+  <hr />
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero et, atque aut,
+  explicabo quibusdam repudiandae, voluptatum tempora dolore assumenda doloribus
+  modi doloremque repellendus enim repellat accusantium asperiores quam
+  pariatur.
+
+  <h2 *ngIf="showInfo">Matan wants to marry with Maya, but maya wants nadav</h2>
+  <br /><br />
+  <!-- <h2 *ngIf="showInfo; else hideInfo">Matan and Nadav wants marry maya</h2>
+  <ng-template #hideInfo>Maya wants only Alon</ng-template> -->
+  <h2 *ngIf="userLogged; else userInfo">Hello Zeev, Logout</h2>
+  <ng-template #userInfo><h2>Hello Guest, please login</h2></ng-template>
+  <button [ngStyle]="{ color: getShowColor() }" (click)="onBtnClick()">
+    login/logout</button
+  ><br /><br />
+  <h3 [ngClass]="{ green_box: !userLogged, red_box: userLogged }">
+    ng class test
+  </h3>
+</div>
