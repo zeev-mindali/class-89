@@ -4,5 +4,13 @@
     <div class="col-7 border p-2" *ngFor="let item of listFruits_ar">
       {{ item }}
     </div>
+    <hr />
+    <div class="col-7 border p-2" *ngFor="let item of listDrink_ar">
+      <h3>{{ item.name | uppercase }}</h3>
+      <div>price : {{ item.price | number : "1.2" | currency : "GBP" }}</div>
+      <div>Alcohol: {{ item.alcohol | percent }}</div>
+      <div>Expired: {{ item.expired | date : "shortDate" }}</div>
+      <hr />
+    </div>
   </div>
 </div>
