@@ -15,6 +15,7 @@ import { AboutComponent } from './Pages/about/about.component';
 import { PlayerComponent } from './Pages/player/player.component';
 import { MainPageComponent } from './Pages/main-page/main-page.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { Page404Component } from './Pages/page404/page404.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     AboutComponent,
     PlayerComponent,
     MainPageComponent,
+    Page404Component,
   ],
   imports: [BrowserModule, AppRoutingModule, YouTubePlayerModule],
   providers: [],
