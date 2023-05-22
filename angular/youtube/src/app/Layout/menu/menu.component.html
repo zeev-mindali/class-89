@@ -1,6 +1,12 @@
 <h2>Main Menu</h2>
 <hr />
 <h3>
+  <a
+    routerLink="/"
+    [routerLinkActive]="['active']"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Home</a
+  ><br /><br />
   <a routerLink="/list" [routerLinkActive]="['active']">all songs</a
   ><br /><br />
   <a routerLink="/addSong" [routerLinkActive]="['active']">add song</a
