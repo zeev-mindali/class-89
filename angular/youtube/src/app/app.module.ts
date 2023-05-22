@@ -14,6 +14,7 @@ import { CategoriesComponent } from './Pages/categories/categories.component';
 import { AboutComponent } from './Pages/about/about.component';
 import { PlayerComponent } from './Pages/player/player.component';
 import { MainPageComponent } from './Pages/main-page/main-page.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
   declarations: [
@@ -28,13 +29,10 @@ import { MainPageComponent } from './Pages/main-page/main-page.component';
     CategoriesComponent,
     AboutComponent,
     PlayerComponent,
-    MainPageComponent
+    MainPageComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, YouTubePlayerModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
