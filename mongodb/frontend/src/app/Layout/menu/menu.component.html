@@ -1,0 +1,21 @@
+<h2>Main Menu</h2>
+<hr />
+<h3>
+  <a
+    routerLink="/"
+    [routerLinkActive]="['active']"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Home</a
+  ><br /><br />
+  <a routerLink="/list" [routerLinkActive]="['active']">all songs</a
+  ><br /><br />
+  <a routerLink="/addSong" [routerLinkActive]="['active']">add song</a
+  ><br /><br />
+  <a routerLink="/addCategory" [routerLinkActive]="['active']">add category</a
+  ><br /><br />
+  <a routerLink="/categories" [routerLinkActive]="['active']">all categories</a
+  ><br /><br />
+  <a routerLink="/about" [routerLinkActive]="['active']">about matan</a
+  ><br /><br />
+  <button (click)="nadavClick()">go nadav go</button>
+</h3>
