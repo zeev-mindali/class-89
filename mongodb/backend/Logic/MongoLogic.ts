@@ -50,3 +50,42 @@ const getPartialSongInfo = (): Promise<ISongModel[]> => {
 /*
 
 */
+
+export {
+  getAllSongs,
+  getSongById,
+  addSong,
+  updateSong,
+  deleteSong,
+  getPartialSongInfo,
+};
+
+/*
+
+        SQL     : SELECT * FROM songs WHERE category = 1
+        MONGODB : return SongModel.find({category:1}).exec();
+
+        SQL     : SELECT * FROM songs WHERE category = 10 AND name = 'This is not a love song'
+        MONGODB : return SongModel.find({category=1,name='this is not a love song'}).exec();
+
+        SQL     : SELECT * from songs WHERE category=1 OR name = 'ilan'
+        MONGODB : return SongModel.find({$or:[{category:1, name:'ilan'}]}).exec();
+
+        SQL     : SELECT * FROM songs WHERE category BETWEEN 1 AND 3
+        MONGODB : return SongModel.find({category: {$gte:1,$lte:3}}).exec()
+
+        SQL     : SELECT category,name FROM songs WHERE category BETWEEN 1 AND 3
+        MONGODB : return SongModel.find(({category:{$gte:1,$lte3},{name:true, category:true, _id:false}})).exec();
+
+        SQL     : SELECT * FROM songs WHERE category between 1 and 3 ORDER BY category ASC name DESC
+        MONGODB : return SongModel.find({category:{$gte:1,$lte:3}},null,{sort:{category:1, name:-1}}).exec();
+
+        SQL     : SELECT * FROM girls LIMIT 10 SKIP 10 GET 7
+        MONGODB : return GirlsModel.find({},null,{skip:10, limit:7}).exec();    //Paganation
+
+        SQL     : SELECT * FROM songs WHERE name LIKE '%ilan%'  %ilan ilan%
+        MONGODB : return SongModel.find({name: {$regex:/^(\b\w+\b){2,}$/}}).exec();
+
+        SQL     : INNER JOIN - get all songs with category for each song
+        MONGODB : return SongModel.find({categoryId: {$ne:null}}).populate("category").exec();
+*/
