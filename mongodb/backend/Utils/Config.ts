@@ -34,7 +34,10 @@ class ProductionConfig extends Config {
   //   public mySQLdatabase = "youtube";
 }
 
-//const config = process.env.MODE_ENV === "production" ? new ProductionConfig() : new DevelopmentConfig();
-const config = new DevelopmentConfig();
+const config =
+  process.env.MODE_ENV === "production"
+    ? new ProductionConfig()
+    : new DevelopmentConfig();
+//const config = new DevelopmentConfig();
 
 export default config;
