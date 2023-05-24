@@ -87,5 +87,9 @@ export {
         MONGODB : return SongModel.find({name: {$regex:/^(\b\w+\b){2,}$/}}).exec();
 
         SQL     : INNER JOIN - get all songs with category for each song
+                : SELECT songs.*, name as categoryName
+                  FROM songs JOIN categories
+                  ON songs.category = category.id
+                  
         MONGODB : return SongModel.find({categoryId: {$ne:null}}).populate("category").exec();
 */
