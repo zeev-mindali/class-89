@@ -2,7 +2,6 @@
 #NOTE: for hot-reloading React, use => "start": "WATCHPACK_POLLING=true react-scripts start" in package.json
 
 services:
-
 # NorthWind database (mysql service):
   northwind-database-service:
     #Image name to create from DockerFile
