@@ -8,6 +8,7 @@ import { FruitService } from 'src/app/services/fruit.service';
 })
 export class InputUserComponent implements OnInit {
   fruit_input = 'Melon';
+  
 
   constructor(private fruitService: FruitService) {}
 

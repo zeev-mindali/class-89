@@ -1,0 +1,25 @@
+<div class="Box">
+  <br />
+  <input
+    [type]="myType"
+    name="uName"
+    id="user_name"
+    [placeholder]="myPlaceHolder"
+    appYellow
+  />
+  <br /><br />
+  <input
+    type="password"
+    name="uPass"
+    id="user_password"
+    placeholder="enter user password"
+    (input)="onPassUpdate($event)"
+    appYellow
+  />
+</div>
+<br /><br />
+<div class="Box">
+  <h1 appRed>you born in</h1>
+  <input type="number" name="age" id="id_age" [(ngModel)]="myAge" />
+  <h2 appGreen>you was burn in {{ 2023 - myAge }}</h2>
+</div>

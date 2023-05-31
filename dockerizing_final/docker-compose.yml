@@ -1,0 +1,109 @@
+#MYSQL Container + REST API Container + React Container + volume (internal docker hdd)
+#NOTE: for hot-reloading React, use => "start": "WATCHPACK_POLLING=true react-scripts start" in package.json
+
+services:
+
+# NorthWind database (mysql service):
+  northwind-database-service:
+    #Image name to create from DockerFile
+    image: mindalizeev/northwind-database-image:1.0
+
+    # Build the image (if not exists) from specified Dockerfile location:
+    build: ./Database
+
+    # Container name:
+    container_name: northwind-database-container
+
+    #port binding [host:container]
+    ports:
+      - 3306:3306
+
+    #Environment variables needed by MySql:
+    environment:
+      MYSQL_HOST: localhost #internally for the container
+      MYSQL_DATABASE: northwind
+      MYSQL_USER: Alice
+      MYSQL_PASSWORD: Wonderland
+      MYSQL_ROOT_PASSWORD: Wonderland #needed by mysql image
+     
+
+    #On crash - restart container, unless manually stopped:
+    restart: unless-stopped
+
+    #Database volumes:
+    volumes:
+      - northwind:/var/lib/mysql
+
+#---------------------------------------------------------------
+
+# NorthWind backend service
+  northwind-backend-service:
+
+    #Image name to create from Dockerfile:
+    image: mindalizeev/northwind-backend-image:1.0
+
+    #Build the image (if not exists) from a specifiec dockerfile location:
+    build: ./Backend
+
+    #container name
+    container_name: northwind-backend-container
+
+    #Port binding (host:container):
+    ports:
+      - 5000:4000
+
+    #Environment variables needed by this service:
+    environment:
+      PORT: 4000
+      MYSQL_HOST:  northwind-database-service #Above database service name is the host name
+      MYSQL_DATABASE: northwind
+      MYSQL_USER: Alice
+      MYSQL_PASSWORD: Wonderland
+
+    #On crash - restart container, unless manually stopped:
+    restart: unless-stopped
+
+    #Host bolume for mounting backend development files to backend container
+    volumes:
+      - ./Backend:/app
+
+    # On which service we are depending on (starting/stopping order):
+    depends_on:
+      - northwind-database-service
+#---------------------------------------------------------------
+
+# NorthWind frontend service
+  northwind-frontend-service:
+    #Image name to create  from dockerfile:
+    image: mindalizeev/northwind-frontend-image:1.0
+
+    #Build the image (if not exists) from specified Dockerfile location:
+    build: ./Frontend
+
+    #Container name:
+    container_name: northwind-frontend-container
+
+    #Port binding (host:container):
+    ports:
+      - 3000:3000
+
+    #On crash - restart container, unless manually stopped:
+    restart: unless-stopped
+
+    #Host volume for mounting Frontend development files to Frontend container
+    volumes:
+      - ./Frontend:/app
+
+    #On which service we are depending on (start/stopping order):
+    depends_on:
+      - northwind-backend-service
+
+#---------------------------------------------------------------
+
+# volumes
+volumes:
+  northwind:
+
+
+ #for running docker-compse , run the command inside the docker-compose.yml file
+ #docker-compose up -d
