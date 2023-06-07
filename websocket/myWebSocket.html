@@ -22,7 +22,8 @@
     <input type="button" onclick="openConnection()" value="open connection" />
     <input type="button" onclick="closeConnection()" value="close connection" />
     <script>
-        var wsUri = "wss://echo.websocket.org";
+        //var wsUri = "ws://echo.websocket.org";
+        var wsUri = "wss://ws.postman-echo.com/raw";
         var webSocket = new WebSocket(wsUri);
 
         function openConnection() {
@@ -32,7 +33,8 @@
         }
 
         function sendMessage() {
-            webSocket.send("hello world !");
+            var myMessage = document.getElementById("id_msg").value;
+            webSocket.send(myMessage);
             console.log("message sent");
         }
 
@@ -51,10 +53,10 @@
             console.log("Web Socket is closed.....");
             console.log("Event:\n", evt);
         }
-        webSocket.onMessage = function (evt) {
+        webSocket.onmessage = function (evt) {
             console.log("Event:\n", evt);
         }
-        webSocket.onError = function (evt) {
+        webSocket.onerror = function (evt) {
             console.log("Event:\n", evt);
         }
     </script>
