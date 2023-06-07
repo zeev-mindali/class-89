@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Socket</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to web socket</h1>
+    <hr />
+    <input type="text" id="id_msg" name="msg" placeholder="enter your message" />
+    <input type="button" onclick="sendMessage()" value="send" />
+    <hr />
+    <input type="button" onclick="openConnection()" value="open connection" />
+    <input type="button" onclick="closeConnection()" value="close connection" />
+    <script>
+        var wsUri = "wss://echo.websocket.org";
+        var webSocket = new WebSocket(wsUri);
+
+        function openConnection() {
+
+            console.log("in open connection");
+
+        }
+
+        function sendMessage() {
+            webSocket.send("hello world !");
+            console.log("message sent");
+        }
+
+        function closeConnection() {
+            webSocket.closeConnection = function (evt) {
+                console.log("Web socket is closed....");
+                console.log("Event:\n", evt);
+            }
+        }
+
+        webSocket.onopen = function (evt) {
+            console.log("Web Socket is opened.....");
+            console.log("Event:\n", evt);
+        }
+        webSocket.onclose = function (evt) {
+            console.log("Web Socket is closed.....");
+            console.log("Event:\n", evt);
+        }
+        webSocket.onMessage = function (evt) {
+            console.log("Event:\n", evt);
+        }
+        webSocket.onError = function (evt) {
+            console.log("Event:\n", evt);
+        }
+    </script>
+</body>
+
+</html>

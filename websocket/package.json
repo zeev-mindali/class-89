@@ -1,0 +1,15 @@
+{
+  "name": "websocket",
+  "version": "1.0.0",
+  "description": "a demo for web socket",
+  "main": "server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hi",
+    "bye"
+  ],
+  "author": "zeev mindali",
+  "license": "ISC"
+}
